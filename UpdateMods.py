@@ -126,11 +126,11 @@ def Handling():
     if os.path.exists(os.path.join("UpdateMod", "logs.txt")):
         os.remove(os.path.join("UpdateMod", "logs.txt"))
     if os.path.exists(os.path.join("UpdateMod", "RawLogs.txt")):
-        os.remove(os.path.join("UpdateMod", "lawLogs.txt"))
+        os.remove(os.path.join("UpdateMod", "RawLogs.txt"))
     if not os.path.exists(os.path.join(os.path.join("UpdateMod"))):
         os.mkdir(os.path.join("UpdateMod"))
     logFile = open(os.path.join("UpdateMod", "logs.txt"), "a")
-    rawLogFile = open(os.path.join("UpdateMod", "lawLogs.txt"), "a")
+    rawLogFile = open(os.path.join("UpdateMod", "RawLogs.txt"), "a")
     for m in message:
         if "ERROR" in m:
             NOT_ERROR = False
