@@ -3,14 +3,20 @@ import subprocess
 from Handling import *
 
 
-""" update mod """
+""" Get all mod in folder """
+mods = [
+    name
+    for name in os.listdir(ModRootFolder)
+    if os.path.isdir(os.path.join(ModRootFolder, name))
+]
 
-unlink()
+""" update mod """
 
 
 def update_mods(modslist):
     modUpdate = ""
     for mod in modslist:
+        print("\nchecking mod: " + mod)
         if formatDate(getCurrentVersion(mod), getLastUpdate(mod)):
             print("update mod: " + mod)
             modUpdate = modUpdate + " +workshop_download_item 294100 " + mod
@@ -27,6 +33,7 @@ def update_mods(modslist):
 
 
 def Handling():
+    unlink()
     message = update_mods(mods)
     modError = []
     NOT_ERROR = True

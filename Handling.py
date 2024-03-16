@@ -3,7 +3,7 @@ from datetime import datetime
 import urllib.request
 
 """ Get game directory """
-gameDir = os.getcwd()
+# gameDir = os.getcwd()
 gameDir = "G:\\GameData\\RimWorld"
 gameId = (
     open(os.path.join(gameDir, "SWconfig.ini"), "r")
@@ -17,12 +17,6 @@ ModRootFolder = os.path.join(
     gameDir, "steamcmd", "steamapps", "workshop", "content", gameId
 )
 
-""" Get all mod in folder """
-mods = [
-    name
-    for name in os.listdir(ModRootFolder)
-    if os.path.isdir(os.path.join(ModRootFolder, name))
-]
 
 """ unlink mod folder """
 

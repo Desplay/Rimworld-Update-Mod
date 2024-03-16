@@ -3,8 +3,6 @@ import subprocess
 
 """ Get game directory """
 
-unlink()
-
 
 def Install_mods(modslist):
     modInstall = ""
@@ -23,6 +21,7 @@ def Install_mods(modslist):
 
 
 def Handling():
+    unlink()
     mod_Input = input("Enter mod id: ")
     modsId = mod_Input.split(" ")
     message = Install_mods(modsId)
@@ -31,11 +30,11 @@ def Handling():
     if os.path.exists(os.path.join("InstallMod", "logs.txt")):
         os.remove(os.path.join("InstallMod", "logs.txt"))
     if os.path.exists(os.path.join("InstallMod", "RawLogs.txt")):
-        os.remove(os.path.join("InstallMod", "lawLogs.txt"))
+        os.remove(os.path.join("InstallMod", "RawLogs.txt"))
     if not os.path.exists(os.path.join(os.path.join("InstallMod"))):
         os.mkdir(os.path.join("InstallMod"))
     logFile = open(os.path.join("InstallMod", "logs.txt"), "a")
-    rawLogFile = open(os.path.join("InstallMod", "lawLogs.txt"), "a")
+    rawLogFile = open(os.path.join("InstallMod", "RawLogs.txt"), "a")
     for m in message:
         if "ERROR" in m:
             NOT_ERROR = False

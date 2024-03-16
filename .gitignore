@@ -1,4 +1,6 @@
-/build
-/dist
+build/*
+dist/*
 test.*
 __pycache__
+*.spec
+mod.txt
